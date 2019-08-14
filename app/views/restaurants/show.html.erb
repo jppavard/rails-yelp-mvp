@@ -20,10 +20,16 @@
   <%= @restaurant.phone_number %>
 </p>
 
+<div class="content-rating-title">
   <strong>content:</strong>
   <% @restaurant.reviews.each do |review| %>
-  <p class="align"></span>><%= review.content %></p>
-  <p><%= review.rating %></p>
+    <p><%= review.content %></p>
   <% end %>
+
+  <strong>rating:</strong>
+  <% @restaurant.reviews.each do |review| %>
+    <p><%= review.rating %></p>
+  <% end %>
+</div>
 <%= link_to 'Back', restaurants_path %>
 <%= link_to 'Review this restaurant', new_restaurant_review_path(@restaurant) %>
